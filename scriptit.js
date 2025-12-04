@@ -8,12 +8,13 @@
     const modalTitle = document.getElementById('modalTitle');
     const modalText = document.getElementById('modalText');
     const modalClose = modal ? modal.querySelector('.close') : null;
+    const modalImage = document.getElementById('modalImage'); // KUVA POPUPPIIN
 
     // --- AUDIO + VIIMEKSI AVATTU LAATIKKO ---
     let currentAudio = null;
     let lastOpenedBox = null;
 
-    // --- LUUKKUJEN TEKSTIT (korvattu antamallasi versiolla) ---
+    // --- LUUKKUJEN TEKSTIT ---
     const messages = {
         1: "Luukku 1 – ihanaa joulun odotusta!",
         2: "Luukku 2 – mukavaa päivää!",
@@ -41,11 +42,28 @@
         24: "Luukku 24 – HYVÄÄ JOULUA! 🎄❤️"
     };
 
+    // --- KUVIEN POLKU / NIMET ---
+    // Muuta polku / pääte jos tarpeen (esim. 'images' tai '.png')
+    function getImageSrcForDay(n) {
+        return `kuvat/${n}.jpeg`;
+    }
+
     // --- MODALIN AVAUS ---
     function openModal(num, messageHtml) {
         if (!modal) return;
 
         if (modalTitle) modalTitle.innerText = 'Luukku ' + num;
+
+        // KUVA otsikon ja tekstin väliin
+        if (modalImage) {
+            const imgSrc = getImageSrcForDay(num);
+            if (imgSrc) {
+                modalImage.innerHTML = `<img src="${imgSrc}" alt="Luukku ${num} kuva">`;
+            } else {
+                modalImage.innerHTML = "";
+            }
+        }
+
         if (modalText) modalText.innerHTML = messageHtml;
         modal.style.display = 'flex';
 
@@ -77,14 +95,23 @@
             lastOpenedBox.setAttribute('aria-expanded', 'false');
 
             const content = lastOpenedBox.querySelector('.content');
+            const number = lastOpenedBox.querySelector('.number');
+
+            // JÄTETÄÄN KUVA NÄKYVIIN LUUKKUUN, NUMERO PIILOON
             if (content) {
-                content.innerHTML = "🎁 Day " + num;
-                content.style.opacity = "0";
-                content.style.transform = "scale(0.96)";
+                const imgSrc = getImageSrcForDay(num);
+                if (imgSrc) {
+                    content.innerHTML = `<img src="${imgSrc}" alt="Luukku ${num} kuva">`;
+                } else {
+                    content.innerHTML = `🎁 Day ${num}`;
+                }
+                content.style.opacity = "1";
+                content.style.transform = "scale(1)";
             }
 
-            const number = lastOpenedBox.querySelector('.number');
-            if (number) number.style.fontWeight = "400";
+            if (number) {
+                number.style.visibility = 'hidden';
+            }
         }
     }
 
@@ -152,7 +179,7 @@
 
     refresh();
 
-    // --- KLIKKAUS (scriptit.js + messages) ---
+    // --- KLIKKAUS (scriptit.js + messages + kuvat) ---
     container.addEventListener('click', e => {
         const box = e.target.closest('.box');
         if (!box) return;
@@ -173,12 +200,8 @@
             return;
         }
 
-        // resetoi vanhat "opened" laatikot
-        document.querySelectorAll('.box.opened').forEach(b => {
-            const num = b.dataset.number;
-            const c = b.querySelector('.content');
-            if (c) c.innerHTML = `🎁 Day ${num}`;
-        });
+        // (aiemmat opened-boksit säilyttävät nyt mahdolliset kuvansa,
+        // joten ei enää ylikirjoiteta niiden .content-tekstiä takaisin)
 
         opened = n;
         lastOpenedBox = box;
@@ -187,12 +210,30 @@
         box.setAttribute('aria-expanded', 'true');
 
         const content = box.querySelector('.content');
-        const message = messages[n]; // <-- nyt sinun versiosi
+        const number = box.querySelector('.number');
+        const message = messages[n];
+        const imgSrc = getImageSrcForDay(n);
 
-        if (content) content.innerHTML = message;
+        // TEKSTI EI NÄY LAATIKOSSA, VAIN POPUPISSA
+        // LAATIKOSSA NÄYTETÄÄN KUVA ENSIMMÄISEN AVAUKSEN JÄLKEEN
+        if (content) {
+            if (imgSrc) {
+                content.innerHTML = `<img src="${imgSrc}" alt="Luukku ${n} kuva">`;
+            } else {
+                content.innerHTML = `🎁 Day ${n}`;
+            }
+            content.style.opacity = "1";
+            content.style.transform = "scale(1)";
+        }
+
+        // NUMERO PIILOON ENSIMMÄISEN AVAUKSEN JÄLKEEN
+        if (number) {
+            number.style.visibility = 'hidden';
+        }
 
         refresh();
 
+        // Popup: teksti (message) + kuva (openModal hoitaa kuvan)
         openModal(n, message);
     });
 
