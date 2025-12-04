@@ -15,32 +15,32 @@
     let lastOpenedBox = null;
 
     // --- LUUKKUJEN TEKSTIT ---
-    const messages = {
-        1: "Luukku 1 – Hiljainen lumi leijailee kuin talven oma laulu.<br>Jokainen hiutale kuiskaa: joulurauha alkaa.",
-        2: "Luukku 2 – Tähtien valo syttyy varovasti iltaan.<br>Se näyttää tien lämpöön ja odotuksen aikaan.",
-        3: "Luukku 3 – Pimeys ei pelota, kun sydämessä on kynttilä.<br>Sen liekki kantaa pidemmälle kuin arvaammekaan.",
-        4: "Luukku 4 – Joulun tuoksu hiipii huoneeseen kuin salainen tarina.<br>Se kertoo lapsuuden muistoista ja toion hetkistä.",
-        5: "Luukku 5 – Jokainen paketti on pieni lupaus ilosta.<br>Tärkein lahja löytyy silti hymystä, jonka annat.",
-        6: "Luukku 6 – Talven hiljaisuus on kuin pehmeä peitto.<br>Sen alle kätkeytyy maailman rauhallisisn hetki",
-        7: "Luukku 7 – Joulutähti syttyy kuin sydämen kipinä.<br>Se muistuttaa, että valo syntyy pienistä asioista.",
-        8: "Luukku 8 – Kuusen oksa kantaa koristeitaan ylpeänä.<br>Se tietää, että hetki loistaa kauan pimeän jälkeen",
-        9: "Luukku 9 – Ystävvyyden lämpö sulattaa kylmimmänkin pakkasen.<br>Jouluna sydämet tuntevat toisensa paremmin.",
-        10: "Luukku 10 – Joulun laulut kulkevvat kotien yli kuin pehmeä tuuli.<br>Ne kantavat mukanaan rauhaa, joka viipyy pitkään.",
-        11: "Luukku 11 – Pieni kynttilä riittää valaisemaan suuren huoneen.<br>Samoin pieni hyvä teko voi valaista koko päivän.",
-        12: "Luukku 12 – Talvi-illan hämärä kerää tarinoita ikkunoille.<br>Jokainen hehkuva valo kertoo omasta joulustaan.",
-        13: "Luukku 13 – Lucian kulku on kuin valonsäde pimeään.<br>Hän tuo mukanaan lupauksen uudesta aamusta.",
-        14: "Luukku 14 – Kädenpuristus tai halaus on joulun kaunein lahja.<br>Se muistuttaa, että lämpö löytyyy ihmisistä.",
-        15: "Luukku 15 – Joulun aikaan kiire pysähtyy hetkeksi hengittämään.<br>Hiljaisuus täyttyy rauhan pienistä soinnuista.",
-        16: "Luukku 16 – Glögin höyry kiertyy ilmaan kuin talven oma hymy.<br>Se kutsuu lähelle ja jakaa lämpönsä kaikille.",
-        17: "Luukku 17 – Joulun valo kasvaa päivä päivältä kirkkaammaksi.<br>Se syttyy meihin, kun jaamme hyvyyttä toisille.",
-        18: "Luukku 18 – Pakkasen kipinä tanssii ikkunassa hopeisena.<br>Sen takana odottaa lämmin ilta ja joulun rauha.",
-        19: "Luukku 19 – Viimeiset päivät ennen joulua ovat kuin pehmeää taikaa.<br>Ne täyttyvät odotuksesta, joka tuntuu sydämmessä asti.",
-        20: "Luukku 20 – Tontut hiippailevat hiljaa kuin varjot seinillä.<br>He tietävät jokaisen kodin salaiset joulutoiveet.",
-        21: "Luukku 21 – Talviyö hengittää tähtien alla.<br>Sen rauha kietoutuu ympärille kuin pehmeä huopa.",
-        22: "Luukku 22 – Päivien kiire hellittää, ja mieli lämpenee.<br>Joulun henki hiipii sisään kuin vanha ystävä.",
-        23: "Luukku 23 – Aaton aatto kantaa mukanaan jännitystä ja iloa.<br>Ilmassa on lupaus huomenna syttyvistä hetkistä.",
-        24: "Luukku 24 – Jouluaamu avautuu kuin rauhallinen taulu.<br>Sen keskellä sydän lausuu hiljaa: Kiitos tästä 🎄❤️"
-    };
+   const messages = {
+      1: "Joulun aamu herättää Auroran pehmeään valoon,<br>kuin unelma, joka jatkuu vielä hereilläkin.<br>Hän kulkee hiljaa linnansa käytävillä ja hymyilee talven rauhalle.",
+      2: "Muumipappa kirjoittaa muistikirjaansa joulun tarinoita.<br>Höyryävä tee ja takkatuli pitävät hänelle seuraa,<br>ja mieli täyttyy menneiden seikkailujen lämpimästä kaiusta.",
+      3: "Jasmine seisoo palatsin parvekkeella ja katsoo talviyöhön.<br>Taikamatto leijailee hänen vierellään kuin vanha ystävä.<br>“On ihmeellistä, miten tähdetkin tuntuvat juhlivan”, hän kuiskaa.",
+      4: "Nuuskamuikkunen vaeltaa lumipolkuja ja kuuntelee hiljaista metsää.<br>Hän virittää huuliharppunsa ja antaa sävelen lentää.<br>Joulun rauha syntyy hetkistä, joita ei tarvitse selittää.",
+      5: "Pikachu hyppelee lumessa, poskissaan lämmin kipinä.<br>Hän piirtää sähköllä ilmaan joulutähden,<br>joka tuikahtaa kirkkaana talvi-illassa.",
+      6: "Pocahontas kulkee talvituulessa, joka kantaa tarinoita.<br>Jokainen hiutale kertoo oman matkansa.<br>Hän kuuntelee luontoa ja vastaa sen lempeään kutsuun.",
+      7: "Nipsu tarkistaa lahjapaketit monta kertaa, varmuuden vuoksi.<br>Hän hyräilee itsekseen ja yrittää olla pelkäämättä yllätyksiä.<br>Jouluna hänkin löytää rohkeuden pienen ilon kautta.",
+      8: "Muksis istuu kuusen juurella ja tutkii koristeita uteliain silmin.<br>Hän hymyilee lempeästi ja heiluttaa pyöreitä korviaan.<br>Joulussa hän näkee ystävyyden hiljaisen voiman.",
+      9: "Mikki järjestää joulun valmistelut tarkasti ja iloisin mielin.<br>Hän sytyttää kuusen valot ja kutsuu kaikki juhlimaan.<br>Hänen hymynsä saa koko huoneen näyttämään lämpimämmältä.",
+      10: "Muumimamma levittää pöydälle joulun herkkuja ja lempeää rauhaa.<br>Hänen köökissään tuoksuu turvallisuus.<br>Hän tietää, että tärkeintä on yhdessäolo.",
+      11: "Eevee pomppii lumihankeen ja muuttaa muotoaan talvituulen tahtiin.<br>Sen häntä pöllyttää valkoisia lumipilviä ilmaan.<br>Joulu on Eeveelle seikkailu, joka alkaa jokaisesta tassunjäljestä.",
+      12: "Mummi kutoo joulusukkia ja hyräilee tuttua melodiaa.<br>Hän katsoo ikkunoista ulos ja toivoo kaikille lämpöä.<br>Hänen joulunsa on täynnä lempeää huolenpitoa.",
+      13: "Muumipeikko rakentaa lumiukon ja hymyilee talven ihmeelle.<br>Hän kaipaa jo kevättä, mutta joulun taika saa sydämen läikähtämään.<br>Tärkeintä on, ettei lumiukko jää yksin.",
+      14: "Pahatar kulkee mustien siipiensä varassa yli talvisen metsän.<br>Hänen katseensa on terävä, mutta hän näkee kauneuden hiljaisuudessa.<br>Jopa varjoissa voi syntyä joulun loisto.",
+      15: "Ponit ravistelevat harjaansa ja päästävät ilmoille kimmeltävän lumisateen.<br>Ne laukkaavat riemulla läpi talvipäivän.<br>Joulu on heille värikäs juhla ystävyyden taivaalla.",
+      16: "Cruella kulkee kaupungin kaduilla talvitakki hulmuten.<br>Hän miettii, miten tehdä joulusta mahdollisimman näyttävä.<br>Lopulta hän huomaa, että joskus pienikin loiste riittää.",
+      17: "Niiskuneiti pukeutuu kimaltavaan rusettiin ja hymyilee talvikuulle.<br>Hän rakastaa joulun kauneutta ja rauhaa.<br>Kaikkein eniten hän odottaa halauksia.",
+      18: "Pascal piiloutuu kuusen oksille ja vaihtaa väriään kuusenkoristeiden mukaan.<br>Vain hänen pienet silmänsä vilkkuvat vihreän takaa.<br>Hän tietää, että joulu on hyvä hetki tarkkailla maailmaa.",
+      19: "Pikkumyy kirmaisee lumihangessa ja päättää valloittaa talvipäivän.<br>Hänen rohkeutensa saa lumihiutaleetkin tanssimaan nopeammin.<br>Missä Myy kulkee, siellä joulun energia herää eloon.",
+      20: "Sebastian harjoittelee joululaulua, vaikka kylmyys nipistelee saksia.<br>Hän johtaa kuoroa punaisena kuin joulutähti.<br>Meri soi hänen sydämessään aina.",
+      21: "Stitch tarkastelee joulukuusta pää kallellaan ja yrittää käyttäytyä parhaansa mukaan.<br>Hän haluaa oppia, mitä rauha oikein tarkoittaa.<br>Ehkä se on kuusen valojen lempeää sykkimistä.",
+      22: "Mörkö seisoo hiljaisessa lumessa ja kuuntelee yötä.<br>Hän ei sano mitään, mutta lumi hohtaa kirkkaammin hänen läsnäolossaan.<br>Joulun taika on joskus hyvin, hyvin hiljaista.",
+      23: "Gena soittaa harmonikkaansa rauhallisesti ja antaa sävelten kantaa yli lumisten kattojen.<br>Muksis istuu vieressä ja kuuntelee lumoutuneena.<br>Heidän joulunsa on ystävyyden laulua.",
+      24: "Anastasia kulkee lumisateessa ja kerää rohkeutta kohti uusia unelmia.<br>Menneet muistot tanssivat kevyesti hänen ympärillään.<br>Jouluyönä hän tuntee, että jokainen tarina saa mahdollisuuden jatkua."
+   };
 
     // --- KUVIEN POLKU / NIMET ---
     // Muuta polku / pääte jos tarpeen (esim. 'images' tai '.png')
@@ -238,4 +238,5 @@
     });
 
 })();
+
 
