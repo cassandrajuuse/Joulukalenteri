@@ -154,10 +154,12 @@
     }
 
     function refresh() {
+        const todayAllowed = getTodayNumber();
+        
         document.querySelectorAll('.box').forEach(b => {
             const n = parseInt(b.dataset.number, 10);
-            b.classList.remove('opened', 'disabled', 'visited');
-            b.disabled = false;
+            const numberEl = b.classList.remove('opened', 'disabled', 'visited');
+            const contentEl = b.disabled = false;
 
             if (n == opened) {
                 b.classList.add('opened');
@@ -171,6 +173,25 @@
                 b.classList.add('disabled');
                 b.disabled = true;
                 b.setAttribute('aria-expanded', 'false');
+            }
+            if (!b.classList.contains('visited') && !b.classList.contains('opened') && n <= todayAllowed) {
+                if (numberEl) {
+                    numberEl.style.visibility = 'hidden';
+                }
+                if (contentEl) {
+                    contentEl.innerHTML = `🎁 Day ${n}`;
+                    contentEl.style.opacity = "1";
+                    contentEl.style.transform = "scale(1)";
+                }
+            }
+
+            if (n > todayAllowed && !b.classList.contains('visited') && !b.classList.contains('opened')) {
+                if (numberEl) {
+                    numberEl.style.visibility = 'visible';
+                }
+                if (contentEl) {
+                    contentEl.innerHTML = `🎁 Day ${n}`;
+                }
             }
         });
 
@@ -238,5 +259,6 @@
     });
 
 })();
+
 
 
